@@ -1,0 +1,18 @@
+1. app.get(path, callback)
+2. res.set('Content-Type', 'text/plain') or
+   res.type('text/plain') or
+   res.setHeader('Content-Type', 'text/plain')
+3. res.send sets headers, write and end.
+4. app.listen(port, [host], backlog, callback)
+
+Routing
+
+app.method(path,handler)  (get (retrieve), post(send), put(update), delete(remove), all)
+
+JSON Processing
+
+Route parameters
+
+Query parameters
+
+req.query
