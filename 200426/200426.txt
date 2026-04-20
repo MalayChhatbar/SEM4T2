@@ -1,0 +1,27 @@
+express         express.static(__dirname)
+|
+| -- 1.js
+| -- 1.html
+| -- 1.css
+
+express.static("frontend")
+
+express/2.js
+express/frontend/2.html
+express/frontend/2.css
+
+sp = path.join(__dirname, "../frontend")
+app.use(express.static(sp))
+
+express/frontend/3.html
+express/frontend/3.html
+express/backend/3.js
+
+app.use(express.static(__dirname, "../"));
+
+express/backend/4.js
+express/4.html
+express/4.css
+
+cookie-parser
+
