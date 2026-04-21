@@ -1,0 +1,20 @@
+Sessions
+
+npm install express-session
+
+oneday = 1000 * 60 * 60 * 24
+app.use(sessions({
+    secret: 'secret key',
+    saveUninitialized: true,
+    cookie: {
+        maxAge: oneday
+    },
+    resave: false
+}))
+
+secret to string
+saveUninitialized: true saves new but modified
+                   false saves only if modified
+resave: true saves on every request
+        false only if modified
+cookie
