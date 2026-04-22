@@ -515,3 +515,43 @@ Rows = Actual, Columns = Predicted
 ---
 
 If you want, I can show how this extends to **multi-class confusion matrices (like Iris dataset)** — that’s usually where students get confused next.
+
+📌 From Confusion Matrix
+
+TN, FP, FN, TP = confusion_matrix(y_true, y_pred).ravel()
+
+
+---
+
+🎯 Precision (Positive Predictive Value - PPV)
+
+Precision = \frac{TP}{TP + FP}
+
+precision = TP / (TP + FP)
+
+---
+
+## 🔍 Recall (Sensitivity / True Positive Rate - TPR)
+\[
+Recall = \frac{TP}{TP + FN}
+\]
+```python
+recall = TP / (TP + FN)
+
+
+---
+
+🛡️ Specificity (True Negative Rate - TNR)
+
+Specificity = \frac{TN}{TN + FP}
+
+specificity = TN / (TN + FP)
+
+---
+
+## ⚖️ F1 Score (F-Measure)
+\[
+F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
+\]
+```python
+f1 = 2 * (precision * recall) / (precision + recall)
