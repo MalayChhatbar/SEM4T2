@@ -555,3 +555,24 @@ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
 \]
 ```python
 f1 = 2 * (precision * recall) / (precision + recall)
+
+
+🔍 Recall = Sensitivity = True Positive Rate (TPR)
+
+👉 All mean the same thing
+
+
+---
+
+📌 Formula
+
+Recall = Sensitivity = \frac{TP}{TP + FN}
+
+
+---
+
+💻 Code
+
+recall = TP / (TP + FN)
+# same as
+sensitivity = TP / (TP + FN)
