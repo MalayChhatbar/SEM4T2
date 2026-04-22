@@ -377,3 +377,141 @@ Or create exam notes (structured + diagrams)
 
 
 Just tell me 👍
+
+Short answer: No — it is NOT returned as TP FP / FN TN.
+
+
+---
+
+📊 Actual format of confusion_matrix in sklearn
+
+In sklearn.metrics.confusion_matrix, the matrix is returned as:
+
+\begin{bmatrix}
+TN & FP \\
+FN & TP
+\end{bmatrix}
+
+
+---
+
+✅ Meaning of positions
+
+If you do:
+
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_true, y_pred)
+print(cm)
+
+Then:
+
+cm[0][0] = TN  # True Negative
+cm[0][1] = FP  # False Positive
+cm[1][0] = FN  # False Negative
+cm[1][1] = TP  # True Positive
+
+
+---
+
+🧠 Easy way to remember
+
+👉 Rows = Actual values
+👉 Columns = Predicted values
+
+	Predicted 0	Predicted 1
+
+Actual 0	TN	FP
+Actual 1	FN	TP
+
+
+
+---
+
+📌 Compare with what you asked
+
+You asked if it's:
+
+TP FP
+FN TN
+
+❌ That is incorrect
+
+
+---
+
+🔍 Using your notebook example
+
+From your output:
+
+[[108  43]
+ [32   48]]
+
+This means:
+
+TN = 108
+
+FP = 43
+
+FN = 32
+
+TP = 48
+
+
+
+---
+
+⚠️ Common mistake (important)
+
+In your notebook, you wrote:
+
+p = cf[0][0] / (cf[0][0] + cf[1][0])
+
+But since:
+
+cf[0][0] = TN
+
+cf[1][0] = FN
+
+
+👉 That formula is NOT precision
+
+
+---
+
+✅ Correct formulas using sklearn matrix
+
+TN, FP, FN, TP = cm.ravel()
+
+accuracy = (TP + TN) / (TP + TN + FP + FN)
+precision = TP / (TP + FP)
+recall = TP / (TP + FN)
+specificity = TN / (TN + FP)
+
+
+---
+
+🔥 Pro Tip (VERY useful in exams)
+
+Always do:
+
+TN, FP, FN, TP = confusion_matrix(y_true, y_pred).ravel()
+
+Then you won’t mess up indexing.
+
+
+---
+
+🚀 Final takeaway
+
+sklearn confusion matrix = [[TN, FP], [FN, TP]]
+
+NOT TP FP / FN TN
+
+Rows = Actual, Columns = Predicted
+
+
+
+---
+
+If you want, I can show how this extends to **multi-class confusion matrices (like Iris dataset)** — that’s usually where students get confused next.
