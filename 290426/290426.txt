@@ -1,0 +1,11 @@
+EJS
+
+Embedded Java Script
+
+Tags
+
+<% %>: Control Flow 
+<%= %>: Escaped html
+<%- %>: Unescaped html
+<%# %>: Comment
+<%% %>: Print Literal
