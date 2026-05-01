@@ -1,0 +1,23 @@
+app.use()
+
+to attach middleware function to your application
+
+express.urlencoded({extended: true}) // can be true(qs) or false(query string)
+
+Middleware
+
+Syntax
+
+middlewarename = (req, res, next) => {
+    next();
+}
+
+app.use('/', middlwarename)
+        or
+app.get('/', middlewarename, (req, res) => {})
+
+app.use():
+    JSON
+    express.static
+    urlencoded
+    CORS
