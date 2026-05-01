@@ -1,0 +1,32 @@
+<p>Name: <%= name %></p>
+<% let marks = T1 + T2 + T3 + T4 %>
+<table border="3px solid black">
+    <tr>
+        <th>Exam</th>
+        <th>Marks</th>
+    </tr>
+    <tr>
+        <td>T1</td>
+        <td><%= T1 %></td>
+    </tr>
+    <tr>
+        <td>T2</td>
+        <td><%= T2 %></td>
+    </tr>
+    <tr>
+        <td>T3</td>
+        <td><%= T3 %></td>
+    </tr>
+    <tr>
+        <td>T4</td>
+        <td><%= T4 %></td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><%= marks %></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td style="color: <%= marks >= 35 ? 'green' : 'red' %>"><%= marks >= 35 ? 'Pass' : 'Fail' %></td>
+    </tr>
+</table>

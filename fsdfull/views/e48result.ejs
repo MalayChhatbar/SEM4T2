@@ -1,0 +1,8 @@
+<p>Name: <%= name %></p>
+<p>Marks: <%= marks %></p>
+<!-- <% if (marks >= 9) { %>
+    <p style="color:green">Pass</p>
+<% } else { %>
+    <p style="color:red">Fail</p>
+<% } %> -->
+<p style="color: <%= marks >= 9 ? 'green' : 'red' %>"><%= marks >= 9 ? 'Pass' : 'Fail' %></p>
